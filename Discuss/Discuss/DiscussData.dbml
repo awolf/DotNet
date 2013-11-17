@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Discuss" Class="DiscussDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=M1530\SQLEXPRESS;Initial Catalog=Discuss;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DiscussConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Topic" Member="Topics">
+    <Type Name="Topic">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" />
+      <Column Name="Uri" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" UpdateCheck="Always" />
+      <Column Name="Created" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" UpdateCheck="Always" IsVersion="true" />
+      <Association Name="Topic_Message" Member="Messages" ThisKey="Id" OtherKey="TopicId" Type="Message" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Message" Member="Messages">
+    <Type Name="Message">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" />
+      <Column Name="TopicId" AutoSync="Always" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" UpdateCheck="Always" />
+      <Column Name="Content" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" UpdateCheck="Always" />
+      <Column Name="Sender" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" UpdateCheck="Always" />
+      <Column Name="Created" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" UpdateCheck="Always" IsVersion="true" />
+      <Association Name="Topic_Message" Member="Topic" ThisKey="TopicId" OtherKey="Id" Type="Topic" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

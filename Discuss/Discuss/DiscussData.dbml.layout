@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DiscussData">
+  <DataContextMoniker Name="/DiscussDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9fb062cb-001c-414c-94fc-1077ba7444af" absoluteBounds="0.75, 0.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DiscussDataContext/Topic" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c4e6e017-d362-45fb-aeb4-f22fd12a27d8" absoluteBounds="0.765, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="902e3388-7e1c-4904-925d-e9e11ef02a9f" absoluteBounds="5.25, 2.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DiscussDataContext/Message" />
+      <nestedChildShapes>
+        <elementListCompartment Id="017bcdc8-cd4a-4080-9ac8-f7468b3020d0" absoluteBounds="5.265, 3.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.56814697265625); (6.25 : 1.56814697265625); (6.25 : 2.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DiscussDataContext/Topic/Topic_Message" />
+      <nodes>
+        <classShapeMoniker Id="9fb062cb-001c-414c-94fc-1077ba7444af" />
+        <classShapeMoniker Id="902e3388-7e1c-4904-925d-e9e11ef02a9f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
